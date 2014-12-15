@@ -13,3 +13,6 @@
 [submodule "modules/upstart"]
 	path = modules/upstart
 	url = https://github.com/bison/puppet-upstart
+[submodule "modules/halo"]
+	path = modules/halo
+	url = https://github.com/atomical/puppet-halo
