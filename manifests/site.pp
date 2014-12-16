@@ -17,20 +17,33 @@ user { 'sapphalo':
   gid        => 'sapphalo',
 }
 
-halo::server{ 'server':
+file{ '/var/halo_maps':
+  source => "puppet:///modules/halo/maps",
+  owner   => $owner,
+  group   => $group,
+  recurse => true,
+}
+
+halo::server{ 'server_1':
   owner            => 'sapphalo',
   group            => 'sapphalo',
   path             => '/home/halo-server',
-  name             => 'Test Halo Server',
-  port             => '2800',
+  name             => 'Puppet Halo Server',
+  port             => 2800,
   rcon_password    => 'sweetdude',
   spawn_protection => 2,
   ping_kick        => 500,
   maps             => ['bloodgulch']
 }
 
-# halo::map{ 'bigassv3_1':
-#   name => 'bigassv3_1',
-#   url  => 'http://halomd.macgamingmods.com/mods/bigassv3_1.zip',
-#   path => '/home/halo-server',
-# }
+halo::server{ 'server_2':
+  owner            => 'sapphalo',
+  group            => 'sapphalo',
+  path             => '/home/slayer-server',
+  name             => 'Puppet Halo Server 2',
+  port             => 2802,
+  rcon_password    => 'sweetdude',
+  spawn_protection => 2,
+  ping_kick        => 500,
+  maps             => ['bloodgulch']
+}
