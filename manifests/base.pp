@@ -19,8 +19,8 @@ user { 'sapphalo':
 
 file{ '/var/halo_maps':
   source => "puppet:///modules/halo/maps",
-  owner   => $owner,
-  group   => $group,
+  owner   => 'sapphalo',
+  group   => 'sapphalo',
   recurse => true,
 }
 
@@ -32,8 +32,9 @@ halo::server{ 'server_1':
   port             => 2800,
   rcon_password    => 'sweetdude',
   spawn_protection => 2,
-  ping_kick        => 500,
-  maps             => ['bloodgulch']
+  ping_kick        => 453,
+  maps             => ['bloodgulch'],
+  game_type        => 'ctf',
 }
 
 halo::server{ 'server_2':
@@ -44,6 +45,7 @@ halo::server{ 'server_2':
   port             => 2802,
   rcon_password    => 'sweetdude',
   spawn_protection => 2,
-  ping_kick        => 500,
-  maps             => ['bloodgulch']
+  ping_kick        => 453,
+  maps             => ['bloodgulch'],
+  game_type        => 'ctf',
 }

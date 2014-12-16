@@ -9,9 +9,11 @@
 
 ### Deploy with Puppet
 
-```git clone --recursive https://github.com/atomical/puppet-halo-example
+```
+sudo apt-get install git puppet
+git clone --recursive https://github.com/atomical/puppet-halo-example
 cd puppet-halo-example
-puppet apply manifests/site.pp --modulepath=./modules \
+puppet apply manifests/base.pp --modulepath=./modules \
   --fileserverconfig=./fileserver.conf
 ```
 

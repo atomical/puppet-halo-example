@@ -91,19 +91,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     web.vm.network :private_network, ip: "192.168.222.3"
     web.vm.provision :puppet do |puppet|
       puppet.manifests_path = "manifests"
-      puppet.manifest_file  = "site.pp"
+      puppet.manifest_file  = "base.pp"
       puppet.working_directory = "/vagrant"
       puppet.options = "--modulepath=/vagrant/modules"
     end
   end
-
-  # config.vm.provision "puppet" do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "site.pp"
-  #   # puppet.module_path = "/vagrant/modules"
-  #   puppet.working_directory = "/vagrant"
-  #   puppet.options = "--modulepath=/vagrant/modules"
-  # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
