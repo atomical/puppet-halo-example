@@ -7,10 +7,11 @@
 4. Boot and configure the server: ```cd puppet-halo-example && vagrant up```
 5. Launch Halo and directly connect to the server at 127.0.0.1:2800
 
-### Deploy with Puppet
+### Deploy with Puppet on Linode (Ubuntu 12.04 LTS)
 
 ```
-sudo apt-get install git puppet
+sudo apt-get update
+sudo apt-get install -y git puppet
 git clone --recursive https://github.com/atomical/puppet-halo-example
 cd puppet-halo-example
 puppet apply manifests/base.pp --modulepath=./modules \
